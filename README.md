@@ -11,7 +11,9 @@ A collection of zsh scripts that demonstrate every major feature of [swiftDialog
 ## Quick Start
 
 ```zsh
-chmod +x run_demos.zsh demos/*.zsh
+# clone this repo
+git clone https://github.com/swiftDialog/demo.git swiftDialog-demo
+cd swiftDialog-demo
 ./run_demos.zsh
 ```
 
@@ -54,4 +56,5 @@ Each demo script is self-contained:
 - Demos that use `--blurscreen` or `--fullscreen` will briefly take over the display
 - Notification demos require notification permissions for swiftDialog
 - Some image demos use system desktop pictures which may vary by macOS version
-- The `--inspect-mode` and `--inspect-config` arguments are excluded from the demo. See the [Inspect Mode](https://swiftdialog.app/advanced/inspect-mode/) documentation for more info.
+- The `--inspect-mode` and `--inspect-config` arguments are excluded from this demo set. Run `dilaog --inspect-mode` with no arguments for options.
+  - See the [Inspect Mode](https://swiftdialog.app/advanced/inspect-mode/) documentation for more info.

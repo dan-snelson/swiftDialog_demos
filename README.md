@@ -54,4 +54,4 @@ Each demo script is self-contained:
 - Demos that use `--blurscreen` or `--fullscreen` will briefly take over the display
 - Notification demos require notification permissions for swiftDialog
 - Some image demos use system desktop pictures which may vary by macOS version
-- The `--inspect-mode` and `--inspect-config` arguments are excluded as they are development/diagnostic tools
+- The `--inspect-mode` and `--inspect-config` arguments are excluded from the demo. See the [Inspect Mode](https://swiftdialog.app/advanced/inspect-mode/) documentation for more info.

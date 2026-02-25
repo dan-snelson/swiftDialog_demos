@@ -104,8 +104,19 @@ DIALOG="/usr/local/bin/dialog"
     --title "Hidden Keyboard Action" \
     --message "The \`--hidedefaultkeyboardaction\` flag requires **⌘⇧** modifier keys to activate Return ↵ or Esc ⎋.\n\nThis prevents accidental dismissal.\n\nTry pressing Enter alone — nothing happens. Use **⌘⇧Enter** instead." \
     --icon "SF=keyboard.badge.ellipsis,colour=#FF9500" \
-    --button1text "Done ✓" \
+    --button1text "Next →" \
     --button2text "Also works with ⌘⇧Esc" \
     --hidedefaultkeyboardaction \
+    --moveable \
+    --json || exit 0
+
+# --- Help sheet button text ---
+"$DIALOG" \
+    --title "Custom Help Button" \
+    --message "The \`--helpsheetbuttontext\` option customises the label of the help trigger button.\n\nClick **Need Help?** in the bottom-right corner to see the help popover." \
+    --icon "SF=questionmark.circle,colour=#5856D6" \
+    --helpsheetbuttontext "Need Help?" \
+    --helpmessage "### How to use this dialog\n\nThis is the **help popover** triggered by the custom \`--helpsheetbuttontext\` button.\n\nYou can put any **markdown content** here, including:\n- Lists\n- Code blocks\n- Links" \
+    --button1text "Done ✓" \
     --moveable \
     --json || true

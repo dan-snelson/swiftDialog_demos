@@ -4,15 +4,18 @@ A collection of zsh scripts that demonstrate every major feature of [swiftDialog
 
 ## Requirements
 
-- **macOS 15+** (Sequoia)
-- **swiftDialog** installed at `/usr/local/bin/dialog`
-- **jq** (install with `brew install jq`)
+- **macOS 15 or newer**
+- [**swiftDialog 3 or newer**](https://github.com/swiftDialog/swiftDialog/releases)
 
 ## Quick Start
 
 ```zsh
 # clone this repo
 git clone https://github.com/swiftDialog/demo.git swiftDialog-demo
+
+# or download the zip
+curl -sL "https://github.com/swiftDialog/demo/archive/refs/heads/main.zip" -o swiftDialog-demo.zip && unzip swiftDialog-demo.zip -d swiftDialog-demo 
+
 cd swiftDialog-demo
 ./run_demos.zsh
 ```

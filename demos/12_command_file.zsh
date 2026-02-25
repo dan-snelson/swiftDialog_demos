@@ -11,6 +11,7 @@
 
 DIALOG="/usr/local/bin/dialog"
 CMD_FILE="/var/tmp/dialog.log"
+BANNER_IMAGE="/System/Library/CoreServices/DefaultDesktop.heic"
 
 rm -f "$CMD_FILE"
 
@@ -53,6 +54,7 @@ sleep 2
 echo "progress: 3" >> "$CMD_FILE"
 echo "progresstext: Updating message..." >> "$CMD_FILE"
 echo "infotext: Step 3 of 19" >> "$CMD_FILE"
+echo "alignment: left" >> "$CMD_FILE"
 echo "message: The message has been completely replaced!\n\nThis is a **new message** with markdown support." >> "$CMD_FILE"
 sleep 2
 
@@ -91,7 +93,7 @@ echo "infotext: Step 8 of 19" >> "$CMD_FILE"
 echo "iconalpha: 0.4" >> "$CMD_FILE"
 sleep 1.5
 echo "iconalpha: 1.0" >> "$CMD_FILE"
-sleep 1
+sleep 2
 
 # Step 9: Resize icon via command file
 echo "progress: 9" >> "$CMD_FILE"
@@ -102,7 +104,7 @@ echo "alignment: left" >> "$CMD_FILE"
 echo "icon: size: 180" >> "$CMD_FILE"
 sleep 2
 echo "icon: size: 100" >> "$CMD_FILE"
-sleep 1
+sleep 2
 
 # Step 10: Update button text and enable/disable
 echo "progress: 10" >> "$CMD_FILE"
@@ -115,7 +117,7 @@ echo "button2: enable" >> "$CMD_FILE"
 sleep 2
 echo "button2: disable" >> "$CMD_FILE"
 echo "button2text: Demo running..." >> "$CMD_FILE"
-sleep 1
+sleep 2
 
 # Step 11: Update info text and info box
 echo "progress: 11" >> "$CMD_FILE"
@@ -128,13 +130,13 @@ sleep 2
 echo "progress: 12" >> "$CMD_FILE"
 echo "progresstext: Resizing window..." >> "$CMD_FILE"
 echo "infotext: Step 12 of 19" >> "$CMD_FILE"
-echo "message: Window dimensions can be changed live.\n\nUsing \`width:\` and \`height:\` via the command file." >> "$CMD_FILE"
+echo "message: Window dimensions can be changed live!\n\nUsing \`width:\` and \`height:\` via the command file." >> "$CMD_FILE"
 echo "width: 900" >> "$CMD_FILE"
 echo "height: 300" >> "$CMD_FILE"
 sleep 2
 echo "width: 700" >> "$CMD_FILE"
 echo "height: 450" >> "$CMD_FILE"
-sleep 1
+sleep 2
 
 # Step 13: Reposition the window
 echo "progress: 13" >> "$CMD_FILE"
@@ -144,7 +146,7 @@ echo "message: The window position can be changed live.\n\nMoving to **topright*
 echo "position: topright" >> "$CMD_FILE"
 sleep 2
 echo "position: center" >> "$CMD_FILE"
-sleep 1
+sleep 2
 
 # Step 14: Centre the icon
 echo "progress: 14" >> "$CMD_FILE"
@@ -170,6 +172,7 @@ sleep 2
 echo "progress: 16" >> "$CMD_FILE"
 echo "progresstext: Adding banner..." >> "$CMD_FILE"
 echo "infotext: Step 16 of 19" >> "$CMD_FILE"
+echo "bannerimage: $BANNER_IMAGE" >> "$CMD_FILE"
 echo "bannertext: Live Banner Text" >> "$CMD_FILE"
 sleep 2
 
@@ -180,7 +183,7 @@ echo "infotext: Step 17 of 19" >> "$CMD_FILE"
 echo "message: The \`activate:\` command brings the dialog to the foreground if it was pushed behind other windows.\n\nSwitch to another app, then watch the dialog come forward." >> "$CMD_FILE"
 sleep 3
 echo "activate:" >> "$CMD_FILE"
-sleep 1
+sleep 2
 
 # Step 18: Reset and prepare for quit
 echo "progress: 18" >> "$CMD_FILE"
@@ -190,7 +193,7 @@ echo "icon: SF=checkmark.seal.fill,colour=#34C759" >> "$CMD_FILE"
 echo "title: Command File Demo Complete" >> "$CMD_FILE"
 echo "titlefont: size=24 weight=bold colour=#34C759" >> "$CMD_FILE"
 echo "message: All key command file operations demonstrated!\n\nClosing in 3 seconds via the \`quit:\` command..." >> "$CMD_FILE"
-sleep 1
+sleep 2
 
 # Step 19: Close with quit: command
 echo "progress: 19" >> "$CMD_FILE"

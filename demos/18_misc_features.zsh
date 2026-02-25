@@ -151,7 +151,7 @@ result=$("$DIALOG" \
 exit_code=$?
 echo "Exit code: $exit_code"
 echo "Output (even on cancel):"
-echo "$result" | jq '.' 2>/dev/null || echo "$result"
+echo "$result" | jq '.'
 
 # --- EULA mode ---
 "$DIALOG" \

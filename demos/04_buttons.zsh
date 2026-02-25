@@ -88,17 +88,6 @@ DIALOG="/usr/local/bin/dialog"
     --moveable \
     --json || exit 0
 
-# --- Disabled buttons ---
-"$DIALOG" \
-    --title "Disabled Buttons" \
-    --message "Button 1 is **disabled** at launch with \`--button1disabled\`.\n\nButton 2 is active. In a real workflow, you'd re-enable Button 1 via the command file after some condition is met.\n\nPress Button 2 to continue." \
-    --icon "SF=hand.raised.slash,colour=#8E8E93" \
-    --button1text "Disabled" \
-    --button1disabled \
-    --button2text "Next →" \
-    --moveable \
-    --json || exit 0
-
 # --- Hide default keyboard action ---
 "$DIALOG" \
     --title "Hidden Keyboard Action" \
@@ -110,13 +99,23 @@ DIALOG="/usr/local/bin/dialog"
     --moveable \
     --json || exit 0
 
-# --- Help sheet button text ---
+# --- Help Message ---
 "$DIALOG" \
-    --title "Custom Help Button" \
-    --message "The \`--helpsheetbuttontext\` option customises the label of the help trigger button.\n\nClick **Need Help?** in the bottom-right corner to see the help popover." \
+    --title "Help Button" \
+    --message "The \`--helpmessage\` option enables the help button.\n\nClick **(?)** in the bottom-right corner to see the help popover." \
     --icon "SF=questionmark.circle,colour=#5856D6" \
-    --helpsheetbuttontext "Need Help?" \
-    --helpmessage "### How to use this dialog\n\nThis is the **help popover** triggered by the custom \`--helpsheetbuttontext\` button.\n\nYou can put any **markdown content** here, including:\n- Lists\n- Code blocks\n- Links" \
-    --button1text "Done ✓" \
+    --helpmessage "### How to use this dialog\n\nThis is the **help popover** triggered by the \`--helpmessage\` option.\n\nYou can put any **markdown content** here, including:\n- Lists\n- Code blocks\n- Links" \
+    --button1text "Next →" \
     --moveable \
     --json || true
+
+# --- Disabled buttons ---
+"$DIALOG" \
+    --title "Disabled Buttons" \
+    --message "Button 1 is **disabled** at launch with \`--button1disabled\`.\n\nButton 2 is active. In a real workflow, you'd re-enable Button 1 via the command file after some condition is met.\n\nPress Button 2 to continue." \
+    --icon "SF=hand.raised.slash,colour=#8E8E93" \
+    --button1text "Disabled" \
+    --button1disabled \
+    --button2text "Done ✓" \
+    --moveable \
+    --json || exit 0

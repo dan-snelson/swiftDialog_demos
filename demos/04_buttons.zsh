@@ -4,7 +4,7 @@
 #               --button2, --button2text, --button2disabled, --button2symbol,
 #               --infobutton, --infobuttontext, --infobuttonaction, --infobuttonsymbol,
 #               --buttonstyle (center, stack), --buttonsize, --buttontextsize,
-#               --quitoninfo, --helpsheetbuttontext, --hidedefaultkeyboardaction
+#               --quitoninfo, --helpmessage, --hidedefaultkeyboardaction
 
 DIALOG="/usr/local/bin/dialog"
 
@@ -99,15 +99,15 @@ DIALOG="/usr/local/bin/dialog"
     --moveable \
     --json || exit 0
 
-# --- Help Message ---
+# --- Help message ---
 "$DIALOG" \
     --title "Help Button" \
-    --message "The \`--helpmessage\` option enables the help button.\n\nClick **(?)** in the bottom-right corner to see the help popover." \
+    --message "The \`--helpmessage\` option enables the **(?)** help button in the bottom-right corner.\n\nClick it to see the help popover." \
     --icon "SF=questionmark.circle,colour=#5856D6" \
     --helpmessage "### How to use this dialog\n\nThis is the **help popover** triggered by the \`--helpmessage\` option.\n\nYou can put any **markdown content** here, including:\n- Lists\n- Code blocks\n- Links" \
     --button1text "Next →" \
     --moveable \
-    --json || true
+    --json || exit 0
 
 # --- Disabled buttons ---
 "$DIALOG" \
